@@ -27,12 +27,15 @@ models:
       - name: month
       - name: organisation_id
         description: il s'agit d'un identifiant unique pour chaque organisation
+        tests: 
+          - unique
+          - not_null
           
       - name: organisation_name
       - name: income
       - name: pricing_plan
 
-  - name: fact_income_montlhy
+  - name: fact_income_monthly
     description: Cette table contient des informations sur les revenus par type et par mois
     
     columns:
@@ -46,6 +49,9 @@ models:
     columns:
       - name: booking_reference
         description: il s'agit d'un identifiant unique pour chaque réservation
+        tests: 
+          - unique
+          - not_null
           
       - name: booked_at
       - name: start_date
@@ -67,6 +73,10 @@ models:
     columns:
       - name: booking_reference
         description: il s'agit d'un identifiant unique pour chaque réservation
+        tests: 
+          - unique
+          - not_null       
+          
     
       - name: booked_at
       - name: start_date
